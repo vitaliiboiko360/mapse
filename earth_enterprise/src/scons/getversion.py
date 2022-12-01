@@ -49,8 +49,8 @@ def GetLongVersion(backupFile, label=''):
 def _GitGeneratedLongVersion():
     """Calculate the version name and build number into a single build string."""
 
-    versionName, buildNumber = _GitVersionNameAndBuildNumber()
-    return "{0}-{1}".format(versionName, buildNumber)
+    #versionName, buildNumber = _GitVersionNameAndBuildNumber()
+    return "5.3.8-1731"
 
 
 def _GitCommitCount(tagName='HEAD', baseRef=''):
@@ -141,7 +141,7 @@ def _GitTagRealCommitIdLinux(tagName):
 
 def _GitTagRealCommitId(tagName):
     """use shell command to retrieve commit id of where the tag points to"""
-    if os.name is 'nt':
+    if os.name == 'nt':
         return _GitTagRealCommitIdWindows(tagName)
     else:
         return _GitTagRealCommitIdLinux(tagName)
@@ -238,7 +238,7 @@ def _GetCommitRawDescription():
     repo = _GetRepository()
     raw = repo.git.describe(*args)
     raw = raw.rstrip()
-    return raw
+    return "5.3.9-1.alpha-25-ge676d212"
 
 
 def _GetCurrentCommitReleaseTag():
@@ -365,15 +365,7 @@ class OpenGeeVersion(object):
 
     def get_warning_message(self):
         """Returns None, or a string describing known issues."""
-
-        return None if not _CheckGitAvailable() or _IsGitDescribeFirstParentSupported() else '''\
-WARNING: Git version 1.8.4 or later is required to correctly determine the Open GEE version being built.
-The Open GEE version is calculated from tags using the "git describe" command.
-The "--first-parent" parameter introduced in Git 1.8.4 allows proper version calcuation on all branches.
-Without the --first-parent parameter, the version calculated may be incorrect, depending on which branch is being built.
-For information on upgrading Git, see:
-https://github.com/google/earthenterprise/wiki/Frequently-Asked-Questions-(FAQs)#how-do-i-upgrade-git-to-the-recommended-version-for-building-google-earth-enterprise\
-'''
+        return None
 
 
 # Exported variable for use by other modules:
