@@ -158,7 +158,7 @@ def StringExpandFileFunc(target, source, env):
   target_dir = os.path.dirname(os.path.abspath(target))
   try:
     os.makedirs(target_dir)
-  except OSError, e:
+  except OSError as e:
     if e.errno != errno.EEXIST:
       raise
 
