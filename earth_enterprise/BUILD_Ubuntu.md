@@ -33,6 +33,15 @@ add "/wdir/earthenterprise/earth_enterprise/src/NATIVE-REL-x86_64/lib
 to the file /etc/ld.so.conf.d/~local.conf
 and run ldconfig
 
+
+## Build libpng locally
+### Configure
+CPPFLAGS="-I/opt/google/include" \
+ LDFLAGS="-L/opt/google/lib" \
+ ./configure --prefix=/opt/google/ \
+ --with-zlib-prefix=/opt/google/
+### make and install
+
 ## Install Required Packages
 Run the following command:
 ```
