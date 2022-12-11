@@ -112,7 +112,7 @@ python_install = python_env.Command(
         'cd %s\n'
         '%s %s install DESTDIR=%s\n'
         'mkdir -p %s\n'
-        'cp -pr LICENSE README %s\n'
+        'cp -pr LICENSE README.rst %s\n'
         'touch %s' % (
             build_root,
             python_env['ENV']['mod_env'], make_cmd, install_root,
