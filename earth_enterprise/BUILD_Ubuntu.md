@@ -45,7 +45,7 @@ CPPFLAGS="-I/opt/google/include" \
 ## Install Required Packages
 Run the following command:
 ```
-sudo apt-get install autoconf automake cmake dpkg g++ gcc libboost-all-dev libc6 libc6-dev libgtest-dev libstdc++6 libtool libgtk2.0-dev libglib2.0-dev libx11-dev libxcursor-dev libxft-dev libxinerama-dev libxrandr-dev libxmu-dev scons xorg-dev python libxml2-utils libxml2-dev
+sudo apt-get install autoconf automake cmake dpkg g++ gcc libboost-all-dev libc6 libc6-dev libgtest-dev libstdc++6 libtool libgtk2.0-dev libglib2.0-dev libx11-dev libxcursor-dev libxft-dev libxinerama-dev libxrandr-dev libxmu-dev scons xorg-dev python libxml2-utils libxml2-dev libyaml-cpp-dev
 
 sudo apt-get install \
 libtiff-dev \
